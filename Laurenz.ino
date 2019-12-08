@@ -50,10 +50,11 @@ void setup() {
   }
 
   strip.begin();
-  strip.show();
 
   currStr = "Hello world!";
   setString();
+
+  strip.show();
 
   server.serveStatic("/", SPIFFS, "/index.html");
   server.on("/get", []() {
