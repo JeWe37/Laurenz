@@ -70,6 +70,7 @@ int i = 0;
 
 void loop() {
   if (cnt++ > 1000) {
+    strip.clear();
     for (int x = 0; x < 40; ++i) {
       for (int y = 0; y < 6; ++y) {
         if (display[(x+i)%(pos+5)+y*255])
