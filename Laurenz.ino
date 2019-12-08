@@ -54,14 +54,11 @@ void setup() {
   currStr = "Hello world!";
   setString();
 
-  strip.show();
-
   server.serveStatic("/", SPIFFS, "/index.html");
   server.on("/get", []() {
     if (server.hasArg("inputString")) {
       currStr = server.arg("inputString");
       setString();
-      strip.show();
     }
   });
 
@@ -83,6 +80,7 @@ void loop() {
     if (i >= pos+5)
       i = 0;
     cnt = 0;
+    strip.show();
   }
   server.handleClient();
   delay(1);
